@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Port Page</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+    <nav>
+      <a href="/auth/google">Login With Google</a>
+      <a href="/logout">Log Out</a>
+    </nav>
+
+    <form action="/ports" method="POST">
+        <label>Location:</label>
+        <input type="text" name="location"><br>
+        <label>Cruise Terminal Locations:</label>
+        <input type="text" name="terminal"><br>
+        <label>Seaman's Centers:</label>
+        <input type="text" name="seamanCenter"><br>
+        <label>Nearby Groceries:</label>
+        <input type="text" name="groceries"><br>
+        <label>Nearby Restaurants:</label>
+        <input type="text" name="restaurants"><br>
+        <label>Nearby Attractions:</label>
+        <input type="text" name="attractions"><br>
+        <input type="submit" value="Add Port">
+    </form>
+</body>
+</html>

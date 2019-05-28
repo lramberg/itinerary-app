@@ -6,7 +6,7 @@ var portSchema = new Schema ({
     terminal: String,
     seamanCenter: String,
     groceries: String,
-    restauraunts: String,
+    restaurants: String,
     attractions: String
 });
 

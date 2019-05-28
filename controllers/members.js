@@ -4,6 +4,7 @@ module.exports = {
     index
 }
 
+
 function index(req, res, next) {
     let modelQuery = req.query.name ? {name: new RegExp(req.query.name, 'i')} : {};
     let sortKey = req.query.sort || 'name';
