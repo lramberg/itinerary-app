@@ -13,9 +13,9 @@ require('./config/database');
 require('./config/passport');
 
 
-
 var indexRouter = require('./routes/index');
 var membersRouter = require('./routes/members');
+
 
 
 // view engine setup

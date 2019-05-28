@@ -4,7 +4,7 @@ var passport = require('passport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Port-Side' });
 });
 
 router.get('/auth/google', passport.authenticate(
@@ -15,14 +15,14 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/members',
-    failureRedirect : '/members'
+    successRedirect : '/members/index',
+    failureRedirect : '/'
   }
 ));
 
 router.get('/logout', function(req, res){
   req.logout();
-  res.redirect('/members');
+  res.redirect('/');
 });
 
 module.exports = router;
