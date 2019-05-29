@@ -6,6 +6,11 @@ var portsCtrl = require('../controllers/ports');
 router.get('/', portsCtrl.index);
 router.get('/new', portsCtrl.new);
 router.get('/:id', portsCtrl.show);
-router.post('/', portsCtrl.create);
+router.post('/', isLoggedIn, portsCtrl.create);
+
+function isLoggedIn(req, res, next) {
+    if ( req.isAuthenticated() ) return next();
+    res.redirect('/auth/google');
+  }
 
 module.exports = router;

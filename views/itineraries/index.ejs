@@ -12,13 +12,12 @@
       <a href="/auth/google">Login With Google</a>
       <a href="/logout">Log Out</a>
     </nav>
-    <h2>Create a New Itinerary</h2>
+    <h2>Saved Itineraries</h2>
 
-    <form action="/itineraries" method="POST">
-      <input type="text" name="name" value="Itinerary Name">
-      <input type="text" name="description" value="Add a description">
-      <button type="submit">Submit</button>
-    </form>
-
+    <% itineraries.forEach(function(i) { %>
+      <p><%= i.name %></p>
+      <p><%= i.description %></p>
+      <a href="/itineraries/<%= i._id %>">Details</a>
+    <% }); %>
 </body>
 </html>

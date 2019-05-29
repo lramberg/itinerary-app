@@ -8,7 +8,6 @@ var portSchema = new Schema ({
     groceries: Array,
     restaurants: Array,
     attractions: Array,
-    // post: [postSchema]
 });
 
 module.exports = mongoose.model('Port', portSchema);

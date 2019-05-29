@@ -15,7 +15,7 @@ function show(req, res) {
             res.render('ports/show', {
                 posts, port
             });
-        })
+        });
     });
 }
 

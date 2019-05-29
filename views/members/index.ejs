@@ -9,16 +9,20 @@
 </head>
 <body>
     <nav>
-      <a href="/auth/google">Login With Google</a>
-      <a href="/logout">Log Out</a>
+      <% if (user) { %>
+        <a href="/logout">Log Out</a>
+      <% } else { %>
+        <a href="/auth/google">Login With Google</a>
+      <% } %>
     </nav>
-    <h2><%= member.name %></h2>
-    <p>This is your member page!</p>
+    <h2>Welcome aboard <%= member.name %>!</h2>
+
     <h3>Saved Itineraries</h3>
+    
     <a href="/itineraries/new">Create New Itinerary</a>
     <a href="/ports">View Ports</a>
     <a href="/ports/new">Add A Port</a>
     
-    <!-- have a form to search for a port -->
+   
 </body>
 </html>

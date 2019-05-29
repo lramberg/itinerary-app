@@ -6,7 +6,6 @@ module.exports = {
 }
 
 function create(req, res) {
-    console.log('HELLOOOOOOOOO')
     var post = new Post;
     // console.log(req)
     // console.log(req.body)
@@ -25,11 +24,3 @@ function create(req, res) {
         });
     });
 }
-// function create(req, res) {
-//     Port.findById(req.params.id, function(err, port) {
-//         port.post.push(req.body);
-//         port.save(function(err) {
-//             res.redirect(`/ports/${port._id}`);
-//         });
-//     });
-// }

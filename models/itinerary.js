@@ -3,7 +3,8 @@ var Schema = mongoose.Schema;
 
 var itinerarySchema = new Schema ({
     name: String,
-    ports: [String]
+    description: String,
+    ports: [{type: Schema.Types.ObjectId, ref: 'Port'}]
 });
 
 module.exports = mongoose.model('Itinerary', itinerarySchema);
