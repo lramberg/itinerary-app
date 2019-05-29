@@ -19,7 +19,7 @@ function deleteItin(req, res, next) {
 function addPort(req, res) {
     Itinerary.findById(req.params.id, function(err, itinerary) {
         itinerary.ports.push(req.body.portId);
-        console.log(Itinerary);
+        console.log('itinerary ', Itinerary);
         itinerary.save(function(err) {
             res.redirect(`/itineraries/${itinerary._id}`);
         });
