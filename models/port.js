@@ -3,11 +3,12 @@ var Schema = mongoose.Schema;
 
 var portSchema = new Schema ({
     location: String,
-    terminal: String,
-    seamanCenter: String,
-    groceries: String,
-    restaurants: String,
-    attractions: String
+    terminal: Array,
+    seamanCenter: Array,
+    groceries: Array,
+    restaurants: Array,
+    attractions: Array,
+    // post: [postSchema]
 });
 
 module.exports = mongoose.model('Port', portSchema);

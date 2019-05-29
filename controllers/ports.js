@@ -1,4 +1,5 @@
 var Port = require('../models/port');
+var Post = require('../models/post');
 
 module.exports = {
     new: newPort,
@@ -8,10 +9,13 @@ module.exports = {
 }
 
 function show(req, res) {
-    Port.findById(req.params.id, function(err, port) {
-        res.render('ports/show', {
-            port: port
-        });
+    Port.findById(req.params.id).exec(function(err, port) {
+        Post.find({portId: req.params.id}).exec(function(err, posts) {
+            console.log(posts)
+            res.render('ports/show', {
+                posts, port
+            });
+        })
     });
 }
 

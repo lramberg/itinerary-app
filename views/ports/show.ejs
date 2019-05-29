@@ -14,19 +14,33 @@
     </nav>
 
   <section>
-    <h3>Location:</h3>
-    <div><%= port.location %></div>
-    <h3>Cruise Terminal Locations:</h3>
-    <div><%= port.terminal %></div>
-    <h3>Seamans Centers:</h3>
-    <div><%= port.seamanCenter %></div>
-    <h3>Nearby Groceries:</h3>
-    <div><%= port.groceries %></div>
-    <h3>Nearby Restaurants:</h3>
-    <div><%= port.restaurants %></div>
-    <h3>Nearby Attractions:</h3>
-    <div><%= port.attractions %></div>
+      <h3>Location:</h3>
+      <div><%= port.location %></div>
+      <h3>Cruise Terminal Locations:</h3>
+      <div><%= port.terminal %></div>
+      <h3>Seamans Centers:</h3>
+      <div><%= port.seamanCenter %></div>
+      <h3>Nearby Groceries:</h3>
+      <div><%= port.groceries %></div>
+      <h3>Nearby Restaurants:</h3>
+      <div><%= port.restaurants %></div>
+      <h3>Nearby Attractions:</h3>
+      <div><%= port.attractions %></div>
+    </section>
+  
+  <form action="/posts/<%= port._id %>/posts" method="POST">
+    <select name="category">
+      <option value="location">Location</option>
+      <option value="terminal">Cruise Terminal</option>
+      <option value="seamanCenter">Seamans Center</option>
+      <option value="groceries">Nearby Groceries</option>
+      <option value="restaurants">Nearby Restaurants</option>
+      <option value="attractions">Nearby Attractions</option>
+    </select>
+    <textarea name="content"  cols="30" rows="10"></textarea>
+    <input type="submit" value="submit">
+  </form>
 
-  </section>
+
 </body>
 </html>

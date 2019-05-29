@@ -17,6 +17,7 @@ var indexRouter = require('./routes/index');
 var membersRouter = require('./routes/members');
 var itinerariesRouter = require('./routes/itineraries');
 var portsRouter = require('./routes/ports');
+var postsRouter = require('./routes/posts');
 
 
 
@@ -41,6 +42,7 @@ app.use('/', indexRouter);
 app.use('/members', membersRouter);
 app.use('/itineraries', itinerariesRouter);
 app.use('/ports', portsRouter);
+app.use('/posts', postsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
