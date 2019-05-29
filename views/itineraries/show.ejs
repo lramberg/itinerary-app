@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profile Page</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+    <nav>
+      <a href="/auth/google">Login With Google</a>
+      <a href="/logout">Log Out</a>
+    </nav>
+
+    <h2>Add Ports to your Itinerary</h2>
+    <form action="/itineraries/<%= itinerary._id%>" method="POST">
+        <select name="portId">
+            <% ports.forEach(port => { %>
+                <option value=`${port._id}`><%= port.location %></option>
+            <% }) %>
+        </select>
+        <button type="submit">Add to Itinerary</button>
+    </form>
+
+</body>
+</html>

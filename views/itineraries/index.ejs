@@ -18,6 +18,9 @@
       <p><%= i.name %></p>
       <p><%= i.description %></p>
       <a href="/itineraries/<%= i._id %>">Details</a>
+      <form action="/itineraries/<%= i._id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+      </form>
     <% }); %>
 </body>
 </html>

@@ -5,25 +5,47 @@ module.exports = {
     index,
     new: newItinerary,
     create,
-    show
+    show,
+    addPort,
+    delete: deleteItin
+}
+
+function deleteItin(req, res, next) {
+    Itinerary.findByIdAndDelete(req.params.id, function(err) {
+        res.redirect('/itineraries');
+    })
+}
+
+function addPort(req, res) {
+    Itinerary.findById(req.params.id, function(err, itinerary) {
+        itinerary.ports.push(req.body.portId);
+        console.log(Itinerary);
+        itinerary.save(function(err) {
+            res.redirect(`/itineraries/${itinerary._id}`);
+        });
+    });
 }
 
 function show(req, res) {
     Itinerary.findById(req.params.id)
     .populate('ports').exec(function(err, itinerary) {
-        Port.find({_id: { $nin: itinerary.ports } }) 
+        Port.find({})
         .exec(function(err, ports) {
             res.render('itineraries/show', {
-                itineraries,
+                itinerary,
                 ports
             });
+            console.log('ports: ', ports);
         });
     }); 
 }
 
 function create(req, res) {
-    Itinerary.create(req.body, function(err, itineraries) {
-        res.redirect('/itineraries');
+    Itinerary.create(req.body, function(err, itinerary) {
+        req.user.itineraries.push(itinerary);
+        req.user.save(function(err){
+            res.redirect('/itineraries');
+        })
     });
 }
 
