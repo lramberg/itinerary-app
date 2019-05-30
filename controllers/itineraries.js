@@ -7,7 +7,49 @@ module.exports = {
     create,
     show,
     addPort,
-    delete: deleteItin
+    delete: deleteItin,
+    edit,
+    update
+}
+
+function edit(req, res, next) {
+    Itinerary.findById(req.params.id)
+        .populate('ports').exec(function(err, itinerary){
+            Port.find({_id: {$in: itinerary.ports}})
+            .exec(function(err, ports){
+                res.render('itineraries/edit', {
+                    itinerary,
+                    ports
+                });
+            })
+        }) 
+}
+
+// function removePort(req, res) {
+//     Itinerary.findById(req.params.id)
+//     .populate('ports').exec(function(err, itinerary) {
+//         itinerary.ports.update( { _id }, {$pullAll: {ports: _id}} );
+//     });
+    // Itinerary.findById(req.params.id)
+    // .populate('ports').exec(function(err, itinerary) {
+    //     Port.find({_id: {$in: itinerary.ports}})
+    //     .exec(function(err, ports){
+    //         itinerary.ports
+    //     })
+    // })
+
+    // hit DELETE port button to remove port from itinerary
+    // grab the port's id, check to see where it is in the `itinerary.ports` array (try indexOf)
+    // once you've found the index of that partiuclar port, remove it from the itinerary.ports array
+// }
+
+function update(req, res) {
+    console.log('req.body: ', req.body);
+    Itinerary.findByIdAndUpdate(req.params.id, req.body, function(err, itinerary) {        
+        itinerary.save(function(err) {
+            res.redirect(`/itineraries/${req.params.id}/edit`);
+        });
+    });
 }
 
 function deleteItin(req, res, next) {

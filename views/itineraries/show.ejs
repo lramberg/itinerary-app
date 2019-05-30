@@ -17,11 +17,22 @@
     <form action="/itineraries/<%= itinerary._id%>" method="POST">
         <select name="portId">
             <% ports.forEach(port => { %>
-                <option value=`${port._id}`><%= port.location %></option>
+                <option value="<%= port.id %>"><%= port.location %></option>
             <% }) %>
         </select>
         <button type="submit">Add to Itinerary</button>
     </form>
 
+    <h2>Ports in this Itinerary</h2>
+    <ul>
+        <% itinerary.ports.forEach(function(p) { %>
+            <li>
+                <%= p.location %>
+                <a href="/ports/<%= p._id %>">Details</a>
+            </li>
+        <% }); %>
+    </ul>
+
+    <a href="/itineraries/<%= itinerary._id%>/edit">Edit</a>
 </body>
 </html>

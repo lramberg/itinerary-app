@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profile Page</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+    <nav>
+      <a href="/auth/google">Login With Google</a>
+      <a href="/logout">Log Out</a>
+    </nav>
+    <h2>Edit <%= itinerary.name %></h2>
+    <h2><%= itinerary.description %></h2>
+
+    <form action="/itineraries/<%= itinerary._id%>?_method=PUT" method="POST">
+      <input type="text" name="name" value="<%= itinerary.name %>">
+      <input type="text" name="description" value="<%= itinerary.description %>">
+      <button type="submit">Submit</button>
+    </form>
+
+    <h2>Ports in this Itinerary</h2>
+    <ul>
+        <% ports.forEach(function(p) { %>
+            <li>
+                <form action="/itineraries/<%= itinerary._id%>/edit?_method=PUT" method="POST">
+                    <button type="submit">X</button>
+                </form>
+                <%= p.location %>
+            </li>
+        <% }); %>
+    </ul>
+
+</body>
+</html>
