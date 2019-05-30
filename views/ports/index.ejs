@@ -4,20 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Profile Page</title>
+    <title>All Ports</title>
+    <link rel='stylesheet' href='/stylesheets/reset.css' />
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Lato&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
     <nav>
-      <a href="/auth/google">Login With Google</a>
       <a href="/logout">Log Out</a>
+      <a href="/members/index">Profile</a>
+      <a href="/ports/">All Ports</a>
+      <a href="/itineraries">All Itineraries</a>
     </nav>
-
-    <% ports.forEach(function(p) { %>
-        <h2><%= p.location %></h2>
-        <a href="/ports/<%= p._id %>">Details</a>
-    <% }); %>
-    
+    <div class="index-wrapper">
+        <h1>AVAILABLE PORTS</h1>
+        <div id="port-index">
+            <ul>            
+                <% ports.forEach(function(p) { %>
+                    <li>
+                        <%= p.location %>
+                        <a class="in-li" href="/ports/<%= p._id %>">Details</a>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>       
+        <a href="/ports/new">Add A Port</a>
+    </div>
     
 </body>
 </html>

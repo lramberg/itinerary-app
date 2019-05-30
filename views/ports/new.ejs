@@ -4,28 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Port Page</title>
+    <title>Add New Port</title>
+    <link rel='stylesheet' href='/stylesheets/reset.css' />
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Lato&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
     <nav>
-      <a href="/auth/google">Login With Google</a>
-      <a href="/logout">Log Out</a>
+        <a href="/logout">Log Out</a>
+        <a href="/members/index">Profile</a>
+        <a href="/ports/">All Ports</a>
+        <a href="/itineraries">All Itineraries</a>
     </nav>
 
     <form action="/ports" method="POST">
         <label>Location:</label>
-        <input type="text" name="location"><br>
+        <input type="text" autocomplete="off" name="location"><br>
         <label>Cruise Terminal Locations:</label>
-        <input type="text" name="terminal"><br>
+        <input type="text" autocomplete="off" name="terminal"><br>
         <label>Seaman's Centers:</label>
-        <input type="text" name="seamanCenter"><br>
+        <input type="text" autocomplete="off" name="seamanCenter"><br>
         <label>Nearby Groceries:</label>
-        <input type="text" name="groceries"><br>
+        <input type="text" autocomplete="off" name="groceries"><br>
         <label>Nearby Restaurants:</label>
-        <input type="text" name="restaurants"><br>
+        <input type="text" autocomplete="off" name="restaurants"><br>
         <label>Nearby Attractions:</label>
-        <input type="text" name="attractions"><br>
+        <input type="text" autocomplete="off" name="attractions"><br>
         <input type="submit" value="Add Port">
     </form>
 </body>

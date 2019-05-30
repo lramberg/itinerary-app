@@ -9,7 +9,7 @@ router.get('/:id/edit', itinerariesCtrl.edit);
 router.post('/', itinerariesCtrl.create);
 router.post('/:id', itinerariesCtrl.addPort);
 router.put('/:id', itinerariesCtrl.update);
-// router.put('/:id/edit', itinerariesCtrl.removePort);
 router.delete('/:id', itinerariesCtrl.delete);
+// router.put('/:id/edit', itinerariesCtrl.removePort);
 
 module.exports = router;

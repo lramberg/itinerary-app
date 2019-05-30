@@ -4,19 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Profile Page</title>
+    <title>Create an Itinerary</title>
+    <link rel='stylesheet' href='/stylesheets/reset.css' />
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Lato&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
     <nav>
-      <a href="/auth/google">Login With Google</a>
       <a href="/logout">Log Out</a>
+      <a href="/members/index">Profile</a>
+      <a href="/ports/">All Ports</a>
+      <a href="/itineraries">All Itineraries</a>
     </nav>
+
     <h2>Create a New Itinerary</h2>
 
     <form action="/itineraries" method="POST">
-      <input type="text" name="name" value="Itinerary Name">
-      <input type="text" name="description" value="Add a description">
+      <label>Name Your Itinerary</label>
+      <input type="text" name="name" placeholder="Itinerary Name" autocomplete="off"><br>
+      <label>Add a brief description</label>
+      <input type="text" name="description" placeholder="Description" autocomplete="off"><br>
       <button type="submit">Submit</button>
     </form>
 

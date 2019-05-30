@@ -1,8 +1,96 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Lato', sans-serif;
+  background: url('../images/background.png');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.wrapper-all {
+
+}
+
+nav {
+  padding: 15px;
+  background-color: rgb(171, 122, 218);
 }
 
 a {
   color: #00B7FF;
+}
+
+.in-li {
+  padding-left: 20px;
+}
+
+.index-wrapper {
+  text-align: center;
+}
+
+#port-index {
+  display: flex;
+  justify-content: space-evenly
+}
+
+li {
+  padding: 15px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#landing-title-wrapper {
+  width: 60vmin;
+  height: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10vmin;
+  padding-bottom: 21vmin;
+}
+
+#landing-title {
+  font-size: 8vmin;
+  font-family: 'Abril Fatface', cursive;
+  background-color: rgb(48, 5, 5);
+  color: #D5B16F;
+  border: 2px solid #D5B16F;
+  border-radius: 5px;
+  box-shadow: -1px 2px 14px 20px rgb(48, 5, 5);
+}
+
+#landing-blurb-wrapper {
+  width: 55vmin;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 7vmin;
+}
+
+#landing-blurb {
+  font-size: 3.2vmin;
+  font-weight: bold;
+  line-height: 1.4;
+  color: rgb(248, 221, 170);
+  background-color: rgba(48, 5, 5, .85);
+  box-shadow: -1px 2px 14px 17px rgba(48, 5, 5, .85);
+  padding: 2vmin;
+  border-radius: 5px;
+}
+
+#link-wrapper {
+  background-color: #080101;
+  width: 55vmin;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#landing-login {
+  text-decoration: none;
+  color: #ffe6c4;
+  font-size: 3vmin;
 }

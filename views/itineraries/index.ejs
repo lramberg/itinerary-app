@@ -4,25 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Profile Page</title>
+    <title>Itineraries</title>
+    <link rel='stylesheet' href='/stylesheets/reset.css' />
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Lato&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
     <nav>
-      <a href="/auth/google">Login With Google</a>
       <a href="/logout">Log Out</a>
+      <a href="/members/index">Profile</a>
+      <a href="/ports/">All Ports</a>
+      <a href="/itineraries">All Itineraries</a>
     </nav>
-    <h2>Saved Itineraries</h2>
-
+    
+    <h2>Your Saved Itineraries</h2>
+    <ul>
     <% itineraries.forEach(function(i) { %>
-      <p><%= i.name %></p>
-      <p><%= i.description %></p>
-      <a href="/itineraries/<%= i._id %>">Details</a>
-      <a href="/itineraries/<%= i._id %>/edit"></a>
-      <form action="/itineraries/<%= i._id%>?_method=DELETE" method="POST">
-        <button type="submit">Delete</button>
-      </form>
-      
+      <li>
+        <p><%= i.name %>: <%= i.description %></p>
+        <a href="/itineraries/<%= i._id %>">Details</a>
+        <a href="/itineraries/<%= i._id %>/edit"></a>
+        <form action="/itineraries/<%= i._id%>?_method=DELETE" method="POST">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
     <% }); %>
+    </ul>
 </body>
 </html>

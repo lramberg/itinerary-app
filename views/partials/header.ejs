@@ -4,10 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Profile Page</title>
+    <link rel='stylesheet' href='/stylesheets/reset.css' />
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Lato&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
     <nav>
+      <% if (user) { %>
         <a href="/logout">Log Out</a>
-        <a href="/auth/google">Log In with Google</a>
+        <a href="/members/index">Profile</a>
+        <a href="/ports/">All Ports</a>
+        <a href="/itineraries">All Itineraries</a>
+      <% } else { %>
+        <a href="/auth/google">Login With Google</a>
+      <% } %>
     </nav>

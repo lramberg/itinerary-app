@@ -1,28 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Profile Page</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body>
-    <nav>
-      <% if (user) { %>
-        <a href="/logout">Log Out</a>
-      <% } else { %>
-        <a href="/auth/google">Login With Google</a>
-      <% } %>
-    </nav>
-    <h2>Welcome aboard <%= member.name %>!</h2>
+<%- include ../partials/header.ejs %>
+<section class="wrapper-all">
+<h2>Welcome aboard <%= member.name %>!</h2>
 
-    <h3>Saved Itineraries</h3>
+<p>You can view a list of all ports <a href="/ports">here</a>. If you do not see the one you are looking for, feel free to add it.</p>
+<a href="/ports/new">Add A Port</a><br>
+
+<p>You can create an itinerary to store all of your upcoming ports in one location.</p><br>
+<a href="/itineraries/new">Create New Itinerary</a><br>
+
+
+
     
-    <a href="/itineraries/new">Create New Itinerary</a>
-    <a href="/ports">View Ports</a>
-    <a href="/ports/new">Add A Port</a>
-    <a href="/itineraries">View Itineraries</a>
-   
-</body>
-</html>
+<a href="/itineraries">View Your Saved Itineraries</a>
+</section>  
+<%- include('../partials/footer') %>

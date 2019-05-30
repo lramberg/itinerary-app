@@ -5,29 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Port Page</title>
+    <link rel='stylesheet' href='/stylesheets/reset.css' />
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Lato&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
     <nav>
-      <a href="/auth/google">Login With Google</a>
       <a href="/logout">Log Out</a>
+      <a href="/members/index">Profile</a>
+      <a href="/ports/">All Ports</a>
+      <a href="/itineraries">All Itineraries</a>
     </nav>
 
-  <section>
-      <h3>Location:</h3>
-      <div><%= port.location %></div>
+    <h3>Location:</h3>
+    <div><%= port.location %></div>
+    <section>
       <h3>Cruise Terminal Locations:</h3>
-      <div><%= port.terminal %></div>
+      <ul class="port-uls">
+        <% port.terminal.forEach(function(t) { %>
+          <li>
+            <%= t %>
+          </li>
+        <% }); %>
+      </ul>
       <h3>Seamans Centers:</h3>
-      <div><%= port.seamanCenter %></div>
+      <ul class="port-uls">
+        <% port.seamanCenter.forEach(function(s) { %>
+          <li>
+            <%= s %>
+          </li>
+        <% }); %>
+      </ul>
       <h3>Nearby Groceries:</h3>
-      <div><%= port.groceries %></div>
+      <ul class="port-uls">
+        <% port.groceries.forEach(function(g) { %>
+          <li>
+            <%= g %>
+          </li>
+        <% }); %>
+      </ul>
       <h3>Nearby Restaurants:</h3>
-      <div><%= port.restaurants %></div>
+      <ul class="port-uls">
+        <% port.restaurants.forEach(function(r) { %>
+          <li>
+            <%= r %>
+          </li>
+        <% }); %>
+      </ul>
       <h3>Nearby Attractions:</h3>
-      <div><%= port.attractions %></div>
+      <ul class="port-uls">
+        <% port.attractions.forEach(function(a) { %>
+          <li>
+            <%= a %>
+          </li>
+        <% }); %>
+      </ul>
     </section>
   
+  <p>If you have more information about this port, please add it below. Just select which category you would like to add to and submit your information</p>
   <form action="/posts/<%= port._id %>/posts" method="POST">
     <select name="category">
       <option value="location">Location</option>
@@ -36,8 +71,8 @@
       <option value="groceries">Nearby Groceries</option>
       <option value="restaurants">Nearby Restaurants</option>
       <option value="attractions">Nearby Attractions</option>
-    </select>
-    <textarea name="content"  cols="30" rows="10"></textarea>
+    </select><br>
+    <textarea name="content"  cols="30" rows="5"></textarea>
     <input type="submit" value="submit">
   </form>
 
