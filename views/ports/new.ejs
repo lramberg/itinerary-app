@@ -4,33 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Add New Port</title>
+    <title>Port-Side</title>
     <link rel='stylesheet' href='/stylesheets/reset.css' />
-    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Merriweather&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
+    <section class="wrapper-all">
     <nav>
-        <a href="/logout">Log Out</a>
-        <a href="/members/index">Profile</a>
-        <a href="/ports/">All Ports</a>
-        <a href="/itineraries">All Itineraries</a>
+        <div class="logo">
+            <p>PORT-SIDE</p>
+        </div>
+        <div class="nav-links">
+            <a class="nav-a" href="/logout">Log Out</a>
+            <a class="nav-a" href="/members/index">Profile</a>
+            <a class="nav-a" href="/ports/">All Ports</a>
+            <a class="nav-a" href="/itineraries">All Itineraries</a>
+        </div>
     </nav>
-
-    <form action="/ports" method="POST">
-        <label>Location:</label>
-        <input type="text" autocomplete="off" name="location"><br>
-        <label>Cruise Terminal Locations:</label>
-        <input type="text" autocomplete="off" name="terminal"><br>
-        <label>Seaman's Centers:</label>
-        <input type="text" autocomplete="off" name="seamanCenter"><br>
-        <label>Nearby Groceries:</label>
-        <input type="text" autocomplete="off" name="groceries"><br>
-        <label>Nearby Restaurants:</label>
-        <input type="text" autocomplete="off" name="restaurants"><br>
-        <label>Nearby Attractions:</label>
-        <input type="text" autocomplete="off" name="attractions"><br>
-        <input type="submit" value="Add Port">
-    </form>
+    <article class="port-content-wrapper">
+        <form action="/ports" method="POST">
+            <div class="input-wrapper">
+                <label class="port-label" >Location:</label>
+                <input class="add-port-input" type="text" autocomplete="off" name="location"><br>
+            </div>
+            <div class="input-wrapper">
+                <label class="port-label" >Cruise Terminal Locations:</label>
+                <input class="add-port-input" type="text" autocomplete="off" name="terminal"><br>
+            </div>
+            <div class="input-wrapper">
+                <label class="port-label" >Seaman's Centers:</label>
+                <input class="add-port-input" type="text" autocomplete="off" name="seamanCenter"><br>
+            </div>
+            <div class="input-wrapper">
+                <label class="port-label" >Nearby Groceries:</label>
+                <input class="add-port-input" type="text" autocomplete="off" name="groceries"><br>
+            </div>
+            <div class="input-wrapper">
+                <label class="port-label" >Nearby Restaurants:</label>
+                <input class="add-port-input" type="text" autocomplete="off" name="restaurants"><br>
+            </div>
+            <div class="input-wrapper">
+                <label class="port-label" >Nearby Attractions:</label>
+                <input class="add-port-input" type="text" autocomplete="off" name="attractions"><br>
+            </div>
+            <input id="add-port" type="submit" value="Add Port">
+        </form>
+    </article>
+    </section>
 </body>
 </html>

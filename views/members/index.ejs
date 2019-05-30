@@ -1,16 +1,48 @@
-<%- include ../partials/header.ejs %>
-<section class="wrapper-all">
-<h2>Welcome aboard <%= member.name %>!</h2>
-
-<p>You can view a list of all ports <a href="/ports">here</a>. If you do not see the one you are looking for, feel free to add it.</p>
-<a href="/ports/new">Add A Port</a><br>
-
-<p>You can create an itinerary to store all of your upcoming ports in one location.</p><br>
-<a href="/itineraries/new">Create New Itinerary</a><br>
-
-
-
-    
-<a href="/itineraries">View Your Saved Itineraries</a>
-</section>  
-<%- include('../partials/footer') %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Port-Side</title>
+        <link rel='stylesheet' href='/stylesheets/reset.css' />
+        <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Merriweather&display=swap" rel="stylesheet">
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+    </head>
+    <body>
+        <section class="wrapper-all">
+        <nav>
+            <div class="logo">
+                <p>PORT-SIDE</p>
+            </div>
+            <div class="nav-links">
+                <% if (user) { %>
+                    <a class="nav-a" href="/logout">Log Out</a>
+                    <a class="nav-a" href="/members/index">Profile</a>
+                    <a class="nav-a" href="/ports/">All Ports</a>
+                    <a class="nav-a" href="/itineraries">All Itineraries</a>
+                <% } else { %>
+                    <a class="nav-a" href="/auth/google">Login With Google</a>
+                <% } %>
+            </div>
+        </nav>
+        <article class="content-wrapper">
+            <h1>Welcome aboard <%= member.name %>!</h1>
+            <section id="member-wrapper">
+                <div class="link-button">
+                    <a class="member-link" href="/ports">View All Ports</a>
+                </div>
+                <div class="link-button">
+                    <a class="member-link" href="/ports/new">Add A Port</a>
+                </div>
+                <div class="link-button">
+                    <a class="member-link" href="/itineraries/new">Create New Itinerary</a>
+                </div>
+                <div class="link-button">
+                    <a class="member-link" href="/itineraries">View Your Itineraries</a>
+                </div>
+            </section>  
+        </article>
+        </section>  
+    </body>
+</html>
