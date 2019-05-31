@@ -181,7 +181,7 @@ h1 {
   text-decoration: none;
 }
 
-#add-port-btn {
+.add-port-btn {
   background-color:rgba(69, 27, 17, .8);
   margin-top: 5vmin;
   height: 10vmin;
@@ -193,7 +193,7 @@ h1 {
 }
 
 
-#add-port-a {
+.add-port-a {
   color: #ffe6c4;
   font-size: 5vmin;
   text-decoration: none;
@@ -276,12 +276,18 @@ h1 {
   margin-top: 5vmin;
 }
 
-#add-info-label {
+.add-info-label {
   font-size: 3.5vmin;
   color: #451B11;
   background-color: rgb(209, 180, 136);
   padding: 1vmin;
   border-radius: 3px;
+}
+
+#itin-label {
+  margin-top: 5vmin;
+  margin-bottom: 1vmin;
+  width: 40vmin;
 }
 
 select {
@@ -296,4 +302,86 @@ select {
   font-family: 'Merriweather', serif;
   font-size: 14px;
   margin: 3vmin;
+}
+
+h2 {
+  padding: 10px;
+  color: rgb(41, 15, 10);
+  margin-bottom: 3vmin;
+  border-bottom: 2px solid rgb(41, 15, 10);
+}
+
+#itin-list {
+  background-color: rgba(232, 197, 132, .5);
+  font-size: 3.5vmin;
+  width: 60vmin;
+  margin: 4vmin;
+  border: 2px solid #451B11;
+  border-radius: 5px;
+}
+
+.details {
+  color: #ffe6c4;
+}
+
+#delete {
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
+  background: none;
+  font-size: 3.5vmin;
+  color: #830400;
+  border-radius: 5px;
+  text-decoration: underline;
+  border: none;
+}
+
+#itin-form-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.add-btn {
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
+  font-size: 3.4vmin;
+  background-color:rgba(69, 27, 17, .8);
+  color: #ffe6c4;
+  padding: 8px;
+  border-radius: 3px;
+  border: 1px solid #ffe6c4;
+  margin-bottom: 2vmin;
+}
+
+.itin-wrapper {
+  justify-content: space-evenly;
+  background-color: rgba(69, 27, 17, .8);
+  margin-top: 10vmin;
+  border-radius: 5px;
+  width: 80vmin;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#location-p {
+  margin-right: 10px;
+  display: inline;
+}
+
+#detail-a {
+  font-size: 4vmin;
+}
+
+#outter-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3vmin;
+}
+
+h4 {
+  font-size: 4vmin;
+  font-weight: bold;
+  color: #ffe6c4;
+  margin-top: 3vmin;
 }

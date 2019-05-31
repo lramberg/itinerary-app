@@ -47,7 +47,7 @@ function update(req, res) {
     console.log('req.body: ', req.body);
     Itinerary.findByIdAndUpdate(req.params.id, req.body, function(err, itinerary) {        
         itinerary.save(function(err) {
-            res.redirect(`/itineraries/${req.params.id}/edit`);
+            res.redirect(`/itineraries/${req.params.id}`);
         });
     });
 }

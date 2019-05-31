@@ -9,34 +9,35 @@
       <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Merriweather&display=swap" rel="stylesheet">
       <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
-<body>
-    <section class="wrapper-all">
-      <nav>
-          <div class="logo">
-              <p>PORT-SIDE</p>
-          </div>
-          <div class="nav-links">
-              <a class="nav-a" href="/logout">Log Out</a>
-              <a class="nav-a" href="/members/index">Profile</a>
-              <a class="nav-a" href="/ports/">All Ports</a>
-              <a class="nav-a" href="/itineraries">All Itineraries</a>
-          </div>
-      </nav> 
-      <article class="show-content-wrapper">
-        <h1 class="more-title">Your Itineraries</h1>
-        <ul>
-        <% itineraries.forEach(function(i) { %>
-          <li>
-            <p><%= i.name %>: <%= i.description %></p>
-            <a href="/itineraries/<%= i._id %>">Details</a>
-            <a href="/itineraries/<%= i._id %>/edit"></a>
-            <form action="/itineraries/<%= i._id%>?_method=DELETE" method="POST">
-            <button type="submit">Delete</button>
-            </form>
-          </li>
-        <% }); %>
-        </ul>
-      </article>
-    </section>
-</body>
+  <body>
+      <section class="wrapper-all">
+        <nav>
+            <div class="logo">
+                <p>PORT-SIDE</p>
+            </div>
+            <div class="nav-links">
+                <a class="nav-a" href="/logout">Log Out</a>
+                <a class="nav-a" href="/members/index">Profile</a>
+                <a class="nav-a" href="/ports/">All Ports</a>
+                <a class="nav-a" href="/itineraries">All Itineraries</a>
+            </div>
+        </nav> 
+        <article class="show-content-wrapper">
+          <h1 class="more-title">Your Itineraries</h1>
+          <ul>
+              <% itineraries.forEach(function(i) { %>
+                <li id="itin-list">
+                  <h2><%= i.name %>: <%= i.description %></h2>
+                  <div id="itin-form-wrapper">
+                    <a class="details" href="/itineraries/<%= i._id %>">Details</a>
+                    <form action="/itineraries/<%= i._id%>?_method=DELETE" method="POST">
+                    <button id="delete" type="submit">Delete</button>
+                    </form>
+                  </div>
+                </li>
+              <% }); %>
+          </ul>
+        </article>
+      </section>
+  </body>
 </html>
