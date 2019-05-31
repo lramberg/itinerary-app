@@ -22,12 +22,12 @@
             <a class="nav-a" href="/itineraries">All Itineraries</a>
         </div>
     </nav>
-    <article class="content-wrapper">
-      <h1><%= port.location %>:</h1>
+    <article class="show-content-wrapper">
+      <h1 class="more-title"><%= port.location %>:</h1>
       <h3>Cruise Terminal Locations:</h3>
       <ul class="port-uls">
         <% port.terminal.forEach(function(t) { %>
-          <li>
+          <li class="show-li">
             <%= t %>
           </li>
         <% }); %>
@@ -35,7 +35,7 @@
       <h3>Seamans Centers:</h3>
       <ul class="port-uls">
         <% port.seamanCenter.forEach(function(s) { %>
-          <li>
+          <li class="show-li">
             <%= s %>
           </li>
         <% }); %>
@@ -43,7 +43,7 @@
       <h3>Nearby Groceries:</h3>
       <ul class="port-uls">
         <% port.groceries.forEach(function(g) { %>
-          <li>
+          <li class="show-li">
             <%= g %>
           </li>
         <% }); %>
@@ -51,7 +51,7 @@
       <h3>Nearby Restaurants:</h3>
       <ul class="port-uls">
         <% port.restaurants.forEach(function(r) { %>
-          <li>
+          <li class="show-li">
             <%= r %>
           </li>
         <% }); %>
@@ -59,27 +59,26 @@
       <h3>Nearby Attractions:</h3>
       <ul class="port-uls">
         <% port.attractions.forEach(function(a) { %>
-          <li>
+          <li class="show-li">
             <%= a %>
           </li>
         <% }); %>
       </ul>
-    </article>
-  
-  <p>If you have more information about this port, please add it below. Just select which category you would like to add to and submit your information</p>
-  <form action="/posts/<%= port._id %>/posts" method="POST">
-    <select name="category">
-      <option value="location">Location</option>
-      <option value="terminal">Cruise Terminal</option>
-      <option value="seamanCenter">Seamans Center</option>
-      <option value="groceries">Nearby Groceries</option>
-      <option value="restaurants">Nearby Restaurants</option>
-      <option value="attractions">Nearby Attractions</option>
-    </select><br>
-    <textarea name="content"  cols="30" rows="5"></textarea>
-    <input type="submit" value="submit">
-  </form>
-
+    <div id="add-info-wrapper">
+      <form action="/posts/<%= port._id %>/posts" method="POST">
+        <label id="add-info-label">SELECT CATEGORY</label>
+        <select name="category">
+          <option value="terminal">Cruise Terminal</option>
+          <option value="seamanCenter">Seamans Center</option>
+          <option value="groceries">Nearby Groceries</option>
+          <option value="restaurants">Nearby Restaurants</option>
+          <option value="attractions">Nearby Attractions</option>
+        </select><br>
+        <textarea id="text-input" name="content"  cols="50" rows="7"></textarea><br>
+        <input class="btn-input" type="submit" value="submit">
+      </form>
+    </div>
+  </article>
   </section>
 </body>
 </html>

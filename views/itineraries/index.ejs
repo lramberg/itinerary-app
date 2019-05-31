@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Itineraries</title>
-    <link rel='stylesheet' href='/stylesheets/reset.css' />
-    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Merriweather&display=swap" rel="stylesheet">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Port-Side</title>
+      <link rel='stylesheet' href='/stylesheets/reset.css' />
+      <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Merriweather&display=swap" rel="stylesheet">
+      <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
 <body>
-    <nav>
-      <a href="/logout">Log Out</a>
-      <a href="/members/index">Profile</a>
-      <a href="/ports/">All Ports</a>
-      <a href="/itineraries">All Itineraries</a>
-    </nav>
-    
-    <h2>Your Saved Itineraries</h2>
-    <ul>
-    <% itineraries.forEach(function(i) { %>
-      <li>
-        <p><%= i.name %>: <%= i.description %></p>
-        <a href="/itineraries/<%= i._id %>">Details</a>
-        <a href="/itineraries/<%= i._id %>/edit"></a>
-        <form action="/itineraries/<%= i._id%>?_method=DELETE" method="POST">
-          <button type="submit">Delete</button>
-        </form>
-      </li>
-    <% }); %>
-    </ul>
+    <section class="wrapper-all">
+      <nav>
+          <div class="logo">
+              <p>PORT-SIDE</p>
+          </div>
+          <div class="nav-links">
+              <a class="nav-a" href="/logout">Log Out</a>
+              <a class="nav-a" href="/members/index">Profile</a>
+              <a class="nav-a" href="/ports/">All Ports</a>
+              <a class="nav-a" href="/itineraries">All Itineraries</a>
+          </div>
+      </nav> 
+      <article class="show-content-wrapper">
+        <h1 class="more-title">Your Itineraries</h1>
+        <ul>
+        <% itineraries.forEach(function(i) { %>
+          <li>
+            <p><%= i.name %>: <%= i.description %></p>
+            <a href="/itineraries/<%= i._id %>">Details</a>
+            <a href="/itineraries/<%= i._id %>/edit"></a>
+            <form action="/itineraries/<%= i._id%>?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
+            </form>
+          </li>
+        <% }); %>
+        </ul>
+      </article>
+    </section>
 </body>
 </html>

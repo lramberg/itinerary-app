@@ -92,6 +92,7 @@ h3 {
   border-bottom: 2px solid #080101;
   background-color: rgba(217, 170, 100, .8);
   padding: 5px;
+  width: 70vmin;
 }
 
 #landing-title-wrapper {
@@ -228,7 +229,7 @@ h1 {
   margin: 5vmin;
 }
 
-#add-port {
+.btn-input {
   background-color: #451B11;
   color: #ffe6c4;
   font-size: 4vmin;
@@ -236,8 +237,63 @@ h1 {
   font-family: 'Merriweather', serif;
   padding: 10px;
   border: 2px solid #ffe6c4;
+  margin-bottom: 2vmin;
+}
+
+.show-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vmin;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  background-color: rgba(41, 15, 10, .7);
+  box-shadow: 0 0 12px 12px rgba(41, 15, 10, .8);
+}
+
+
+.more-title {
+  font-size: 10vmin;
+  border: 2px solid #451B11;
+  background-color: rgba(232, 197, 132, .8);
+  box-shadow: 0 0 10px 10px rgba(232, 197, 132, .6);
+  padding: 15px;
 }
 
 .port-uls {
-  background-color: rgba(8, 1, 1, .8);
+  background-color: rgba(63, 5, 3, .85);
+  width: 70vmin;
+}
+
+.show-li {
+  font-size: 4vmin;
+  color: #D5B16F;
+  padding: 10px;
+}
+
+#add-info-wrapper {
+  margin-top: 5vmin;
+}
+
+#add-info-label {
+  font-size: 3.5vmin;
+  color: #451B11;
+  background-color: rgb(209, 180, 136);
+  padding: 1vmin;
+  border-radius: 3px;
+}
+
+select {
+  height: 6vmin;
+  border: 2px solid #080101;
+  font-family: 'Merriweather', serif;
+  font-size: 4vmin;
+  margin-bottom: 3vmin;
+}
+
+#text-input {
+  font-family: 'Merriweather', serif;
+  font-size: 14px;
+  margin: 3vmin;
 }
