@@ -24,8 +24,9 @@
         </nav> 
         <article class="show-content-wrapper">
           <h1 class="more-title">Your Itineraries</h1>
-          <ul>
+          <ul> 
               <% itineraries.forEach(function(i) { %>
+                <% if (sessionUser._id == i.userId) { %>
                 <li id="itin-list">
                   <h2><%= i.name %>: <%= i.description %></h2>
                   <div id="itin-form-wrapper">
@@ -35,6 +36,7 @@
                     </form>
                   </div>
                 </li>
+              <% } %>
               <% }); %>
           </ul>
         </article>
