@@ -8,7 +8,7 @@
 
 ![Imgur](https://i.imgur.com/TterdaV.jpg)
 
-##Technologies Used
+## Technologies Used
 
 * HTML
 * CSS
@@ -18,11 +18,11 @@
 * mongoDB
 * mongoose
 
-##Getting Started
+## Getting Started
 
 [Link to app](https://port-side.herokuapp.com)
 
-##Planned Future Enhancements
+## Planned Future Enhancements
 
 Add further editing functionality to the itineraries
 
